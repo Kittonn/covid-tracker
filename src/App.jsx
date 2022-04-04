@@ -1,17 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getAllCase } from "./store/covidAllCaseSlice";
+import React from "react";
+import AllCase from "./components/AllCase";
+import Navbar from "./components/Navbar";
 
 const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllCase());
-  }, [dispatch]);
-
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Navbar />
+      <AllCase />
     </div>
   );
 };
