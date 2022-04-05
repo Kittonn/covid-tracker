@@ -11,7 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { useDispatch, useSelector } from "react-redux";
-
+import { options } from "./options/atkTestOption";
 import { getTest } from "../../store/atkTestSlice";
 
 ChartJS.register(
@@ -41,7 +41,7 @@ const AtkTestChart = () => {
         borderWidth: 1,
       },
       {
-        label: "positive",
+        label: "Positive",
         data: gettest.map((item) => item.positive),
         backgroundColor: ["rgba(72, 202, 228, 1)"],
         borderWidth: 1,
@@ -50,7 +50,7 @@ const AtkTestChart = () => {
   };
   return (
     <div>
-      <Line data={data} height={150} />
+      <Line data={data} height={150} options={options} />
     </div>
   );
 };

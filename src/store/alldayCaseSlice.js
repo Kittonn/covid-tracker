@@ -12,7 +12,6 @@ const allDaySlice = createSlice({
   initialState: {
     list: [],
     status: null,
-    case: [],
   },
   extraReducers: {
     [getAllDay.pending]: (state, action) => {

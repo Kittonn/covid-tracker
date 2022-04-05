@@ -12,7 +12,7 @@ import {
 } from "chart.js";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllDay } from "../../store/alldayCaseSlice";
-import { options } from "./options";
+import { options } from "./options/allDayOptions";
 
 ChartJS.register(
   CategoryScale,
@@ -39,7 +39,7 @@ const AllCaseChart = () => {
         label: "ผู้ติดเชือใหม่",
         data: allDay.map((item) => item.new_case),
         backgroundColor: ["rgba(255,99,132,0.6)"],
-        borderWidth: 1,
+        borderWidth: 2,
       },
     ],
   };

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { alldayActions } from "../store/alldayCaseSlice";
 import AllCaseChart from "./Chart/AllCaseChart";
 
 const data = [
@@ -12,7 +14,12 @@ const SelectBox = () => {
 
   return (
     <div>
-      <select value={selected} onChange={(e) => setSelected(e.target.value)}>
+      <select
+        value={selected}
+        onChange={(e) => {
+          setSelected(e.target.value);
+        }}
+      >
         {data.map((item) => {
           return (
             <option key={item.id} value={item.value}>
