@@ -11,8 +11,8 @@ import {
   Legend,
 } from "chart.js";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllDay } from "../../store/alldayCaseSlice";
-import { options } from "./options";
+
+import { getTest } from "../../store/atkTestSlice";
 
 ChartJS.register(
   CategoryScale,
@@ -24,32 +24,35 @@ ChartJS.register(
   Legend
 );
 
-const AllCaseChart = () => {
+const AtkTestChart = () => {
   const dispatch = useDispatch();
+  const gettest = useSelector((state) => state.atktest.list);
 
   useEffect(() => {
-    dispatch(getAllDay());
+    dispatch(getTest());
   }, [dispatch]);
-  const allDay = useSelector((state) => state.allday.list);
   const data = {
-    labels: allDay.map((item) => item.date),
+    labels: gettest.map((item) => item.date),
     datasets: [
       {
-        label: "ผู้ติดเชือใหม่",
-        data: allDay.map((item) => item.NewConfirmed),
+        label: "จำนวนการตรวจเชื้อ",
+        data: gettest.map((item) => item.tests),
         backgroundColor: ["rgba(255,99,132,0.6)"],
+        borderWidth: 1,
+      },
+      {
+        label: "positive",
+        data: gettest.map((item) => item.positive),
+        backgroundColor: ["rgba(72, 202, 228, 1)"],
         borderWidth: 1,
       },
     ],
   };
-
   return (
-    <div className="font-[Poppins]">
-      <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
-        <Line data={data} height={150} options={options} />
-      </div>
+    <div>
+      <Line data={data} height={150} />
     </div>
   );
 };
 
-export default AllCaseChart;
+export default AtkTestChart;
