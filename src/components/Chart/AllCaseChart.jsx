@@ -30,13 +30,14 @@ const AllCaseChart = () => {
   useEffect(() => {
     dispatch(getAllDay());
   }, [dispatch]);
+
   const allDay = useSelector((state) => state.allday.list);
   const data = {
-    labels: allDay.map((item) => item.date),
+    labels: allDay.map((item) => item.txn_date),
     datasets: [
       {
         label: "ผู้ติดเชือใหม่",
-        data: allDay.map((item) => item.NewConfirmed),
+        data: allDay.map((item) => item.new_case),
         backgroundColor: ["rgba(255,99,132,0.6)"],
         borderWidth: 1,
       },

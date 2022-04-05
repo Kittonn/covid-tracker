@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const url =
-  "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/cases/national-timeseries.json";
+const url = "https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all";
 
 export const getAllDay = createAsyncThunk("/Cases/getAllDay", async () => {
   return axios.get(url).then((res) => res.data);
@@ -13,6 +12,7 @@ const allDaySlice = createSlice({
   initialState: {
     list: [],
     status: null,
+    case: [],
   },
   extraReducers: {
     [getAllDay.pending]: (state, action) => {
