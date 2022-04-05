@@ -12,6 +12,7 @@ import {
 } from "chart.js";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllDay } from "../../store/alldayCaseSlice";
+import { options } from "./options";
 
 ChartJS.register(
   CategoryScale,
@@ -31,20 +32,23 @@ const AllCaseChart = () => {
     dispatch(getAllDay());
   }, [dispatch]);
 
-  var data = {
-    labels: allDay.map((item) => new Date(item.txn_date).getFullYear()),
+  const data = {
+    labels: allDay.map((item) => item.date),
     datasets: [
       {
-        label: "Covid",
-        data: allDay.map((item) => item.new_case),
+        label: "ผู้ติดเชือใหม่",
+        data: allDay.map((item) => item.NewConfirmed),
         backgroundColor: ["rgba(255,99,132,0.6)"],
+        borderWidth: 1,
       },
     ],
   };
 
   return (
-    <div>
-      <Line data={data} />
+    <div className="font-[Poppins]">
+      <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
+        <Line data={data} height={150} options={options} />
+      </div>
     </div>
   );
 };
