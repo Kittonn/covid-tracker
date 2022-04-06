@@ -13,7 +13,16 @@ const provinceVaccineSlice = createSlice({
   initialState: {
     list: [],
     status: null,
-    dataObj: {},
+    dataProvince: {},
+    update_date: "",
+  },
+  reducers: {
+    change_province(state, action) {
+      const dataObj = state.list.data.filter(
+        (item) => item.province === action.payload
+      );
+      state.dataProvince = dataObj[0];
+    },
   },
   extraReducers: {
     [getProvinceVaccine.pending]: (state, action) => {
@@ -22,6 +31,8 @@ const provinceVaccineSlice = createSlice({
     [getProvinceVaccine.fulfilled]: (state, action) => {
       state.list = action.payload;
       state.status = "success";
+      state.update_date = state.list.update_date;
+      state.dataProvince = state.list.data[state.list.data.length - 1];
     },
     [getProvinceVaccine.rejected]: (state, action) => {
       state.status = "failed";
