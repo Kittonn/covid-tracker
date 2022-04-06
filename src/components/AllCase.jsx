@@ -11,6 +11,7 @@ const AllCase = () => {
     new_death,
     total_case,
     new_case,
+    update_date,
   } = useSelector((state) => state.allcase.dataObj);
   const dispatch = useDispatch();
 
@@ -19,8 +20,16 @@ const AllCase = () => {
   }, [dispatch]);
 
   return (
-    <div className="bg-[#e5e5e5] font-[Poppins]">
+    <div className="bg-[#e5e5e5] font-[Kanit]">
       <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
+        <div className="text-center pt-8">
+          <h1 className="text-[#03045e] font-bold text-5xl">
+            รายงานสถานการณ์ Covid-19
+          </h1>
+          <p className="text-lg font-medium mt-4 ">
+            อัพเดตข้อมูล ณ {update_date}
+          </p>
+        </div>
         <div className="flex flex-wrap justify-between ">
           <div className="bg-white flex-1 mx-3 my-3 md:my-5 lg:my-6 p-5 rounded-xl shadow-md">
             <p className="text-base whitespace-nowrap font-bold mb-2">

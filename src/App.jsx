@@ -1,10 +1,10 @@
 import React from "react";
 import AllCase from "./components/AllCase";
 import Navbar from "./components/Navbar";
-// import SelectBox from "./components/SelectBox";
 import Footer from "./components/Footer";
 import AllCaseChart from "./components/Chart/AllCaseChart";
 import AtkTest from "./components/AtkTest";
+import ProvinceCase from "./components/ProvinceCase";
 const App = () => {
   return (
     <div>
@@ -12,7 +12,7 @@ const App = () => {
       <AllCase />
       <AllCaseChart />
       <AtkTest />
-      {/* <SelectBox /> */}
+      <ProvinceCase />
       <Footer />
     </div>
   );

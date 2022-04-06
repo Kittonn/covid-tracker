@@ -3,7 +3,7 @@ import axios from "axios";
 
 const url = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-all";
 
-export const getAllCase = createAsyncThunk("Cases/getAllCase", () => {
+export const getAllCase = createAsyncThunk("Cases/getAllCase", async () => {
   return axios.get(url).then((res) => res.data);
 });
 
