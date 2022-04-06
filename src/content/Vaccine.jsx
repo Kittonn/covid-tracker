@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import VaccineProvinceSelect from "../components/VaccineProvinceSelect";
+import { getProvinceVaccine } from "../store/provinceVaccineSlice";
 
 const Vaccine = () => {
-  return <div>vaccine</div>;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProvinceVaccine());
+  }, [dispatch]);
+  return (
+    <div>
+      <VaccineProvinceSelect />
+    </div>
+  );
 };
 
 export default Vaccine;

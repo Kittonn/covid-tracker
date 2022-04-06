@@ -3,6 +3,7 @@ import allDaySlice from "./alldayCaseSlice";
 import atkTestSlice from "./atkTestSlice";
 import allCaseSlice from "./covidAllCaseSlice";
 import provinceCaseSlice from "./provinceCaseSlice";
+import provinceVaccineSlice from "./provinceVaccineSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     allday: allDaySlice.reducer,
     atktest: atkTestSlice.reducer,
     provincecase: provinceCaseSlice.reducer,
+    provincevaccine: provinceVaccineSlice.reducer,
   },
 });
 
