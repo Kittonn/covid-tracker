@@ -11,8 +11,8 @@ const App = () => {
       <Navbar />
       <AllCase />
       <AllCaseChart />
-      <AtkTest />
       <ProvinceCase />
+      <AtkTest />
       <Footer />
     </div>
   );

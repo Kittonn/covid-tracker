@@ -23,7 +23,9 @@ ChartJS.register(
 );
 
 const ProvinceCaseChart = () => {
-  const { date, new_case } = useSelector((state) => state.provincecase);
+  const { date, new_case, name_province } = useSelector(
+    (state) => state.provincecase
+  );
 
   const data = {
     labels: date,
@@ -36,9 +38,32 @@ const ProvinceCaseChart = () => {
       },
     ],
   };
+  const options = {
+    plugins: {
+      title: {
+        display: true,
+        text: `กราฟแสดงจำนวนผู้ติดเชื้อใหม่รายวันในรอบ 14 วัน จังหวัด${name_province}`,
+        font: {
+          size: 20,
+          family: "Kanit",
+        },
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          maxTicksLimit: 15,
+        },
+      },
+    },
+  };
+
   return (
     <div>
-      <Line data={data} />
+      <Line data={data} options={options} />
     </div>
   );
 };

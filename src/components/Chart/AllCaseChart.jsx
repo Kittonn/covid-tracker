@@ -46,7 +46,7 @@ const AllCaseChart = () => {
 
   return (
     <div className="font-[Poppins]">
-      <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
+      <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto py-8">
         <Line data={data} height={150} options={options} />
       </div>
     </div>

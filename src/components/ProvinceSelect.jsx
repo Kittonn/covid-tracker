@@ -8,7 +8,8 @@ const ProvinceSelect = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="font-[Kanit]">
+      <label>เลือกจังหวัด : </label>
       <select
         value={selected}
         onChange={(e) => {

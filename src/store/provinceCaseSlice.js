@@ -30,6 +30,7 @@ const provinceCaseSlice = createSlice({
     status: null,
     date: [],
     new_case: [],
+    name_province: "",
   },
   reducers: {
     change_province(state, action) {
@@ -40,6 +41,7 @@ const provinceCaseSlice = createSlice({
         formatDate(new Date(item))
       );
       state.new_case = Object.values(dataObj[0].cases);
+      state.name_province = dataObj[0].name;
     },
   },
   extraReducers: {
@@ -54,6 +56,7 @@ const provinceCaseSlice = createSlice({
         formatDate(new Date(item))
       );
       state.new_case = Object.values(dataObj[0].cases);
+      state.name_province = dataObj[0].name;
     },
     [getProvinceCase.rejected]: (state, action) => {
       state.status = "failed";

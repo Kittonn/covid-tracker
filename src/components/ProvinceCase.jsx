@@ -9,9 +9,11 @@ const ProvinceCase = () => {
     dispatch(getProvinceCase());
   }, [dispatch]);
   return (
-    <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
-      <ProvinceSelect />
-      <ProvinceCaseChart />
+    <div className="bg-[#e5e5e5]">
+      <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto py-8">
+        <ProvinceSelect />
+        <ProvinceCaseChart />
+      </div>
     </div>
   );
 };
