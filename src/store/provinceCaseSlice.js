@@ -11,19 +11,35 @@ export const getProvinceCase = createAsyncThunk(
   }
 );
 
+const padTo2Digit = (num) => {
+  return num.toString().padStart(2, "0");
+};
+
+const formatDate = (date) => {
+  return [
+    padTo2Digit(date.getDate()),
+    padTo2Digit(date.getMonth() + 1),
+    date.getFullYear(),
+  ].join("-");
+};
+
 const provinceCaseSlice = createSlice({
   name: "provincecase",
   initialState: {
     list: [],
     status: null,
-    dataObj: {},
+    date: [],
+    new_case: [],
   },
   reducers: {
     change_province(state, action) {
-      const dataList = state.list.filter(
+      const dataObj = state.list.filter(
         (item) => item.id === Number(action.payload)
       );
-      state.dataObj = dataList[0];
+      state.date = Object.keys(dataObj[0].cases).map((item) =>
+        formatDate(new Date(item))
+      );
+      state.new_case = Object.values(dataObj[0].cases);
     },
   },
   extraReducers: {
@@ -33,7 +49,11 @@ const provinceCaseSlice = createSlice({
     [getProvinceCase.fulfilled]: (state, action) => {
       state.list = action.payload;
       state.status = "success";
-      state.dataObj = state.list[1];
+      const dataObj = state.list.filter((item) => item.id === 10);
+      state.date = Object.keys(dataObj[0].cases).map((item) =>
+        formatDate(new Date(item))
+      );
+      state.new_case = Object.values(dataObj[0].cases);
     },
     [getProvinceCase.rejected]: (state, action) => {
       state.status = "failed";
