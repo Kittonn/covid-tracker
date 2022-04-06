@@ -20,7 +20,7 @@ export const options = {
   scales: {
     x: {
       ticks: {
-        maxTicksLimit: 15,
+        maxTicksLimit: 12,
       },
     },
   },

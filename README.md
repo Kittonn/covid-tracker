@@ -8,6 +8,8 @@
 * Tailwind Css
 * Redux Toolkit
 * Axios
+* Chart.Js
+* React-icons
 
 ### Api 
 * [https://github.com/porames/the-researcher-covid-data](https://github.com/porames/the-researcher-covid-data)

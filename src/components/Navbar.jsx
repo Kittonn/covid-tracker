@@ -1,5 +1,5 @@
 import React from "react";
-
+import { AiFillApi } from "react-icons/ai";
 const Navbar = () => {
   return (
     <div className="bg-[#14213d] text-white">
@@ -16,7 +16,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Api Data
+            <AiFillApi className="text-3xl" />
           </a>
         </div>
       </div>
