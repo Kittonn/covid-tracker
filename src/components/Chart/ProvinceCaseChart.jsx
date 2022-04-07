@@ -39,6 +39,7 @@ const ProvinceCaseChart = () => {
     ],
   };
   const options = {
+    responsive: true,
     plugins: {
       title: {
         display: true,

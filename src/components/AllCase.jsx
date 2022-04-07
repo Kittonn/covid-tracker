@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCase } from "../store/covidAllCaseSlice";
-import { FcPlus } from "react-icons/fc";
+import { FcPlus, FcCalendar } from "react-icons/fc";
 
 const AllCase = () => {
   const {
@@ -26,7 +26,10 @@ const AllCase = () => {
           <h1 className="text-[#03045e] font-bold text-5xl">
             รายงานสถานการณ์ Covid-19
           </h1>
-          <p className="text-lg font-medium mt-4 ">
+          <p className="flex items-center justify-center text-lg font-medium mt-4 ">
+            <span>
+              <FcCalendar className="text-2xl mr-1" />
+            </span>
             อัพเดตข้อมูล ณ {update_date}
           </p>
         </div>

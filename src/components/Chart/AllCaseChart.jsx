@@ -12,7 +12,6 @@ import {
 } from "chart.js";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllDay } from "../../store/alldayCaseSlice";
-import { options } from "./options/allDayOptions";
 
 ChartJS.register(
   CategoryScale,
@@ -24,31 +23,58 @@ ChartJS.register(
   Legend
 );
 
-const AllCaseChart = () => {
+const AllCaseChart = ({ selected }) => {
   const dispatch = useDispatch();
+
+  const text =
+    selected === "new_case"
+      ? "ผู้ติดเชื้อรายใหม่"
+      : selected === "new_death"
+      ? "ผู้เสียชีวิตรายใหม่"
+      : "ผู้ป่วยรักษาหาย";
 
   useEffect(() => {
     dispatch(getAllDay());
   }, [dispatch]);
 
-  const allDay = useSelector((state) => state.allday.list);
+  const allDay = useSelector((state) => state.allday.data);
   const data = {
     labels: allDay.map((item) => item.txn_date),
     datasets: [
       {
-        label: "ผู้ติดเชือใหม่",
-        data: allDay.map((item) => item.new_case),
+        data: allDay.map((item) => item.case),
         backgroundColor: ["rgba(255,99,132,0.6)"],
         borderWidth: 2,
       },
     ],
   };
+  const options = {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: `กราฟแสดงจำนวน${text} ในรอบ 14 วัน`,
+        font: {
+          size: 22,
+          family: "Kanit",
+        },
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          maxTicksLimit: 12,
+        },
+      },
+    },
+  };
 
   return (
     <div className="font-[Poppins]">
-      <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto py-8">
-        <Line data={data} height={150} options={options} />
-      </div>
+      <Line data={data} height={150} options={options} />
     </div>
   );
 };

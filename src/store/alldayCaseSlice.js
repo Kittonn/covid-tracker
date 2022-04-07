@@ -12,14 +12,54 @@ const allDaySlice = createSlice({
   initialState: {
     list: [],
     status: null,
+    data: [],
+  },
+  reducers: {
+    change(state, action) {
+      if (action.payload === "new_case") {
+        state.data = state.list.map((item) => {
+          return {
+            name: "ผู้ติดเชื้อรายใหม่",
+            txn_date: item.txn_date,
+            case: item.new_case,
+          };
+        });
+      } else if (action.payload === "new_death") {
+        state.data = state.list.map((item) => {
+          return {
+            name: "ผู้เสียชีวิตรายใหม่",
+            txn_date: item.txn_date,
+            case: item.new_death,
+          };
+        });
+      } else {
+        state.data = state.list.map((item) => {
+          return {
+            name: "ผู้ป่วยรักษาหาย",
+            txn_date: item.txn_date,
+            case: item.new_recovered,
+          };
+        });
+      }
+    },
   },
   extraReducers: {
     [getAllDay.pending]: (state, action) => {
       state.status = "loading";
     },
     [getAllDay.fulfilled]: (state, action) => {
-      state.list = action.payload;
+      state.list = action.payload.slice(
+        action.payload.length - 14,
+        action.payload.length
+      );
       state.status = "success";
+      state.data = state.list.map((item) => {
+        return {
+          name: "ผู้ติดเชื้อรายใหม่",
+          txn_date: item.txn_date,
+          case: item.new_case,
+        };
+      });
     },
     [getAllDay.rejected]: (state, action) => {
       state.status = "failed";
