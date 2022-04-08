@@ -13,6 +13,7 @@ const AllCase = () => {
     new_case,
     update_date,
   } = useSelector((state) => state.allcase.dataObj);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,14 +40,14 @@ const AllCase = () => {
               ผู้ติดเชื้อรายใหม่สะสม
             </p>
             <h1 className="text-3xl font-bold text-[#03045e] tracking-wider mb-2">
-              {total_case || 0}
+              {total_case.toLocaleString()}
             </h1>
             <hr />
             <p className="text-base text-[#adb5bd] mt-1">เพิ่ม</p>
             <div className="flex items-center">
               <FcPlus className="text-2xl mr-2" />
               <div className="tracking-wider font-bold text-lg">
-                {new_case || 0}
+                {new_case.toLocaleString()}
               </div>
             </div>
           </div>
@@ -55,14 +56,14 @@ const AllCase = () => {
               ผู้ป่วยรักษาหายสะสม
             </p>
             <h1 className="text-3xl font-bold text-[#03045e] tracking-wider mb-2">
-              {total_recovered || 0}
+              {total_recovered.toLocaleString()}
             </h1>
             <hr />
             <p className="text-base text-[#adb5bd] mt-1">เพิ่ม</p>
             <div className="flex items-center">
               <FcPlus className="text-2xl mr-2" />
               <div className="tracking-wider font-bold text-lg">
-                {new_recovered || 0}
+                {new_recovered.toLocaleString()}
               </div>
             </div>
           </div>
@@ -71,14 +72,14 @@ const AllCase = () => {
               ผู้เสียชีวิตสะสม
             </p>
             <h1 className="text-3xl font-bold text-[#03045e] tracking-wider mb-2">
-              {total_death || 0}
+              {total_death.toLocaleString()}
             </h1>
             <hr />
             <p className="text-base text-[#adb5bd] mt-1">เพิ่ม</p>
             <div className="flex items-center">
               <FcPlus className="text-2xl mr-2" />
               <div className="tracking-wider font-bold text-lg">
-                {new_death || 0}
+                {new_death.toLocaleString()}
               </div>
             </div>
           </div>

@@ -12,7 +12,15 @@ const allCaseSlice = createSlice({
   initialState: {
     list: [],
     status: null,
-    dataObj: {},
+    dataObj: {
+      total_recovered: 0,
+      new_recovered: 0,
+      total_death: 0,
+      new_death: 0,
+      total_case: 0,
+      new_case: 0,
+      update_date: "",
+    },
   },
   extraReducers: {
     [getAllCase.pending]: (state, action) => {
