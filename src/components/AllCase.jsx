@@ -33,16 +33,16 @@ const AllCase = () => {
             อัพเดตข้อมูล ณ {update_date}
           </p>
         </div>
-        <div className="flex flex-wrap justify-between ">
+        <div className="flex flex-wrap justify-between font-[Kanit]">
           <div className="bg-white flex-1 mx-3 my-3 md:my-5 lg:my-6 p-5 rounded-xl shadow-md">
             <p className="text-base whitespace-nowrap font-bold mb-2">
-              Confirmed Case
+              ผู้ติดเชื้อรายใหม่สะสม
             </p>
             <h1 className="text-3xl font-bold text-[#03045e] tracking-wider mb-2">
               {total_case || 0}
             </h1>
             <hr />
-            <p className="text-base text-[#adb5bd] mt-1">Cases</p>
+            <p className="text-base text-[#adb5bd] mt-1">เพิ่ม</p>
             <div className="flex items-center">
               <FcPlus className="text-2xl mr-2" />
               <div className="tracking-wider font-bold text-lg">
@@ -52,13 +52,13 @@ const AllCase = () => {
           </div>
           <div className="bg-white flex-1 mx-3 my-3 md:my-5 lg:my-6 p-5 rounded-xl shadow-md">
             <p className="text-base whitespace-nowrap font-bold mb-2">
-              Recovered Case
+              ผู้ป่วยรักษาหายสะสม
             </p>
             <h1 className="text-3xl font-bold text-[#03045e] tracking-wider mb-2">
               {total_recovered || 0}
             </h1>
             <hr />
-            <p className="text-base text-[#adb5bd] mt-1">Cases</p>
+            <p className="text-base text-[#adb5bd] mt-1">เพิ่ม</p>
             <div className="flex items-center">
               <FcPlus className="text-2xl mr-2" />
               <div className="tracking-wider font-bold text-lg">
@@ -68,13 +68,13 @@ const AllCase = () => {
           </div>
           <div className="bg-white flex-1 mx-3 my-3 md:my-5 lg:my-6 p-5 rounded-xl shadow-md">
             <p className="text-base whitespace-nowrap font-bold mb-2">
-              Death Case
+              ผู้เสียชีวิตสะสม
             </p>
             <h1 className="text-3xl font-bold text-[#03045e] tracking-wider mb-2">
               {total_death || 0}
             </h1>
             <hr />
-            <p className="text-base text-[#adb5bd] mt-1">Cases</p>
+            <p className="text-base text-[#adb5bd] mt-1">เพิ่ม</p>
             <div className="flex items-center">
               <FcPlus className="text-2xl mr-2" />
               <div className="tracking-wider font-bold text-lg">

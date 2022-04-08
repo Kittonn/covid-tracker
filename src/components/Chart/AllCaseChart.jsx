@@ -57,7 +57,7 @@ const AllCaseChart = ({ selected }) => {
         display: true,
         text: `กราฟแสดงจำนวน${text} ในรอบ 14 วัน`,
         font: {
-          size: 22,
+          size: 16,
           family: "Kanit",
         },
       },
