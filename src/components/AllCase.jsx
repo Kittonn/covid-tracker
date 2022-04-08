@@ -23,10 +23,10 @@ const AllCase = () => {
     <div className="bg-[#e5e5e5] font-[Kanit]">
       <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
         <div className="text-center pt-8">
-          <h1 className="text-[#03045e] font-bold text-5xl">
+          <h1 className="text-[#03045e] font-bold text-2xl md:text-3xl  lg:text-5xl">
             รายงานสถานการณ์ Covid-19
           </h1>
-          <p className="flex items-center justify-center text-lg font-medium mt-4 ">
+          <p className="flex items-center justify-center text-lg  font-medium mt-2 lg:mt-4">
             <span>
               <FcCalendar className="text-2xl mr-1" />
             </span>
