@@ -10,7 +10,7 @@ const Page = () => {
     <div>
       <Navbar />
       <Case />
-      <Vaccine />
+      {/* <Vaccine /> */}
       <Footer />
     </div>
   );

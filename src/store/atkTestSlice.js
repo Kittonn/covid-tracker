@@ -19,7 +19,10 @@ const atkTestSlice = createSlice({
       state.status = "loading";
     },
     [getTest.fulfilled]: (state, action) => {
-      state.list = action.payload;
+      state.list = action.payload.slice(
+        action.payload.length - 14,
+        action.payload.length
+      );
       state.status = "success";
     },
     [getTest.rejected]: (state, action) => {

@@ -33,13 +33,15 @@ const ProvinceCaseChart = () => {
       {
         label: "ผู้ติดเชือใหม่",
         data: new_case,
-        backgroundColor: ["rgba(255,99,132,0.6)"],
+        backgroundColor: ["rgba(54, 162, 235, 0.2)"],
+        borderColor: ["rgb(54, 162, 235)"],
         borderWidth: 2,
       },
     ],
   };
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -56,14 +58,17 @@ const ProvinceCaseChart = () => {
     scales: {
       x: {
         ticks: {
-          maxTicksLimit: 15,
+          maxTicksLimit: 7,
         },
+      },
+      y: {
+        beginAtZero: true,
       },
     },
   };
 
   return (
-    <div>
+    <div className="font-[Poppins] h-[300px] md:h-[400px] lg:h-[480px]">
       <Line data={data} options={options} />
     </div>
   );

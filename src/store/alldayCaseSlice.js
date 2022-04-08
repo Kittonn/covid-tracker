@@ -19,7 +19,6 @@ const allDaySlice = createSlice({
       if (action.payload === "new_case") {
         state.data = state.list.map((item) => {
           return {
-            name: "ผู้ติดเชื้อรายใหม่",
             txn_date: item.txn_date,
             case: item.new_case,
           };
@@ -27,7 +26,6 @@ const allDaySlice = createSlice({
       } else if (action.payload === "new_death") {
         state.data = state.list.map((item) => {
           return {
-            name: "ผู้เสียชีวิตรายใหม่",
             txn_date: item.txn_date,
             case: item.new_death,
           };
@@ -35,7 +33,6 @@ const allDaySlice = createSlice({
       } else {
         state.data = state.list.map((item) => {
           return {
-            name: "ผู้ป่วยรักษาหาย",
             txn_date: item.txn_date,
             case: item.new_recovered,
           };
@@ -55,7 +52,6 @@ const allDaySlice = createSlice({
       state.status = "success";
       state.data = state.list.map((item) => {
         return {
-          name: "ผู้ติดเชื้อรายใหม่",
           txn_date: item.txn_date,
           case: item.new_case,
         };

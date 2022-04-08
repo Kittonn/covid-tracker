@@ -43,13 +43,15 @@ const AllCaseChart = ({ selected }) => {
     datasets: [
       {
         data: allDay.map((item) => item.case),
-        backgroundColor: ["rgba(255,99,132,0.6)"],
+        backgroundColor: ["rgba(255, 205, 86, 0.2)"],
+        borderColor: ["rgb(255, 205, 86)"],
         borderWidth: 2,
       },
     ],
   };
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -66,15 +68,18 @@ const AllCaseChart = ({ selected }) => {
     scales: {
       x: {
         ticks: {
-          maxTicksLimit: 12,
+          maxTicksLimit: 7,
         },
+      },
+      y: {
+        beginAtZero: true,
       },
     },
   };
 
   return (
-    <div className="font-[Poppins]">
-      <Line data={data} height={150} options={options} />
+    <div className="font-[Poppins] h-[300px] md:h-[400px] lg:h-[480px]">
+      <Line data={data} options={options} />
     </div>
   );
 };
