@@ -6,12 +6,14 @@ import VaccineProvinceChart from "../components/Chart/VaccineProvinceChart";
 import DayVaccine from "../components/DayVaccine";
 import { getDayVaccine } from "../store/dayVaccine";
 import DayVaccineChart from "../components/Chart/DayVaccineChart";
+import { getDayVaccineType } from "../store/dayVaccineType";
 
 const Vaccine = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProvinceVaccine());
     dispatch(getDayVaccine());
+    dispatch(getDayVaccineType());
   }, [dispatch]);
   return (
     <div>

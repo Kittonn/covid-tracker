@@ -3,6 +3,7 @@ import allDaySlice from "./alldayCaseSlice";
 import atkTestSlice from "./atkTestSlice";
 import allCaseSlice from "./covidAllCaseSlice";
 import dayVaccineSlice from "./dayVaccine";
+import dayVaccineTypeSlice from "./dayVaccineType";
 import provinceCaseSlice from "./provinceCaseSlice";
 import provinceVaccineSlice from "./provinceVaccineSlice";
 
@@ -14,6 +15,7 @@ const store = configureStore({
     provincecase: provinceCaseSlice.reducer,
     provincevaccine: provinceVaccineSlice.reducer,
     dayvaccine: dayVaccineSlice.reducer,
+    dayvaccinetype: dayVaccineTypeSlice.reducer,
   },
 });
 

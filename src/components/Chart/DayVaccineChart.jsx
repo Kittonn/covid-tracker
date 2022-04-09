@@ -25,8 +25,8 @@ const DayVaccineChart = () => {
       {
         label: "เข็มที่ 3",
         data: list.map((item) => item.third_dose),
-        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-        borderColor: ["rgb(255, 99, 132)"],
+        backgroundColor: ["rgba(255, 205, 86, 0.2)"],
+        borderColor: ["rgb(255, 205, 86)"],
         borderWidth: 1,
       },
     ],
@@ -37,7 +37,7 @@ const DayVaccineChart = () => {
     plugins: {
       title: {
         display: true,
-        text: "กราฟแสดงจำนวนการฉีดวัคซีน",
+        text: "กราฟแสดงจำนวนการฉีดวัคซีนทั้งประเทศ ในรอบ 14 วัน",
         font: {
           size: 16,
           family: "Kanit",
