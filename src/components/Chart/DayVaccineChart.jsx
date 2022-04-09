@@ -64,10 +64,8 @@ const DayVaccineChart = () => {
     },
   };
   return (
-    <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto py-8">
-      <div className="font-[Poppins] h-[300px] md:h-[400px] lg:h-[480px]">
-        <Line data={data} options={options} />
-      </div>
+    <div className="font-[Poppins] h-[300px] md:h-[400px] lg:h-[480px]">
+      <Line data={data} options={options} />
     </div>
   );
 };
