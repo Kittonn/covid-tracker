@@ -45,7 +45,10 @@ const ProvinceCaseChart = () => {
     plugins: {
       title: {
         display: true,
-        text: `กราฟแสดงจำนวนผู้ติดเชื้อใหม่รายวันในรอบ 14 วัน จังหวัด${name_province}`,
+        text: [
+          "กราฟแสดงจำนวนผู้ติดเชื้อใหม่รายวันในรอบ 14 วัน ",
+          `จังหวัด${name_province}`,
+        ],
         font: {
           size: 16,
           family: "Kanit",
