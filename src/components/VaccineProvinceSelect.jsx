@@ -7,7 +7,7 @@ const VaccineProvinceSelect = () => {
   const [selected, setSelected] = useState(province[0].PROVINCE_NAME);
   const dispatch = useDispatch();
   return (
-    <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
+    <div className="">
       <label>เลือกจังหวัด : </label>
       <select
         value={selected}

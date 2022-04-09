@@ -17,10 +17,13 @@ const Vaccine = () => {
     <div>
       <DayVaccine />
       <DayVaccineChart />
-      {/* <div className="bg-[#e5e5e5] font-[Kanit] py-8">
-        <VaccineProvinceSelect />
-        <VaccineProvinceChart />
-      </div> */}
+
+      <div className="bg-[#e5e5e5] font-[Kanit] py-8">
+        <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
+          <VaccineProvinceSelect />
+          <VaccineProvinceChart />
+        </div>
+      </div>
     </div>
   );
 };

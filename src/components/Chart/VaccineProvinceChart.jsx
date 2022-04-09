@@ -35,7 +35,7 @@ const VaccineProvinceChart = () => {
     labels: ["Sinovac", "Astrazeneca", "Pfizer", "Total"],
     datasets: [
       {
-        label: `การจัดส่งวัคซีนในจังหวัด${province}`,
+        label: `ปริมาณ`,
         data: [
           delivered_sinovac,
           delivered_astrazeneca,
@@ -57,11 +57,42 @@ const VaccineProvinceChart = () => {
       },
     ],
   };
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      title: {
+        display: true,
+        text: `การจัดส่งวัคซีนในจังหวัด${province}`,
+        font: {
+          size: 16,
+          family: "Kanit",
+        },
+      },
+      legend: {
+        display: false,
+        labels: {
+          font: {
+            size: 14,
+            family: "Kanit",
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          maxTicksLimit: 7,
+        },
+      },
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
   return (
-    <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
-      <div className="font-[Poppins] h-[300px] md:h-[400px] lg:h-[480px]">
-        <Bar data={data} />
-      </div>
+    <div className="font-[Poppins] h-[300px] md:h-[400px] lg:h-[480px]">
+      <Bar data={data} options={options} />
     </div>
   );
 };
