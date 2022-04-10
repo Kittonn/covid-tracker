@@ -1,8 +1,8 @@
 import React from "react";
-import AllCase from "../components/AllCase";
-import AtkTest from "../components/AtkTest";
-import ProvinceCase from "../components/ProvinceCase";
-import AllCaseSelect from "../components/AllCaseSelect";
+import AllCase from "../components/Covid/AllCase";
+import AtkTest from "../components/Covid/AtkTest";
+import ProvinceCase from "../components/Covid/ProvinceCase";
+import AllCaseSelect from "../components/Covid/AllCaseSelect";
 const Case = () => {
   return (
     <div>

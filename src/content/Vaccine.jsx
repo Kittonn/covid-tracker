@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import VaccineProvinceSelect from "../components/VaccineProvinceSelect";
+import VaccineProvinceSelect from "../components/Vaccine/VaccineProvinceSelect";
 import { getProvinceVaccine } from "../store/provinceVaccineSlice";
 import VaccineProvinceChart from "../components/Chart/VaccineProvinceChart";
-import DayVaccine from "../components/DayVaccine";
+import DayVaccine from "../components/Vaccine/DayVaccine";
 import { getDayVaccine } from "../store/dayVaccine";
-import VaccineSelect from "../components/VaccineSelect";
+import VaccineSelect from "../components/Vaccine/VaccineSelect";
 import { getDayVaccineType } from "../store/dayVaccineType";
 import { getProvinceVaccineDose } from "../store/provinceVaccineDoseSlice";
-import ProvinceVaccineTypeSelect from "../components/ProvinceVaccineTypeSelect";
+import ProvinceVaccineTypeSelect from "../components/Vaccine/ProvinceVaccineTypeSelect";
 import { getProvinceVaccineType } from "../store/ProvinceVaccineTypeSlice";
 
 const Vaccine = () => {

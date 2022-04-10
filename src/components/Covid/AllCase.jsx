@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCase } from "../store/covidAllCaseSlice";
+import { getAllCase } from "../../store/covidAllCaseSlice";
 import { FcPlus, FcCalendar } from "react-icons/fc";
 
 const AllCase = () => {

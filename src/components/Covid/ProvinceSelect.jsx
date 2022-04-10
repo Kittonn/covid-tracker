@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { province } from "../data/province";
+import { province } from "../../data/province";
 import { useDispatch } from "react-redux";
-import { provinceCaseActions } from "../store/provinceCaseSlice";
+import { provinceCaseActions } from "../../store/provinceCaseSlice";
 import { FcHome } from "react-icons/fc";
 
 const ProvinceSelect = () => {

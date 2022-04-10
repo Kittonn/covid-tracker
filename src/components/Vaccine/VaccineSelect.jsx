@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { vaccinegraphtype } from "../data/vaccinegraphtype";
-import DayVaccineChart from "./Chart/DayVaccineChart";
-import DayVaccineTypeChart from "./Chart/DayVaccineTypeChart";
+import { vaccinegraphtype } from "../../data/vaccinegraphtype";
+import DayVaccineChart from "../Chart/DayVaccineChart";
+import DayVaccineTypeChart from "../Chart/DayVaccineTypeChart";
 
 const VaccineSelect = () => {
   const [selected, setSelected] = useState("dose_type");

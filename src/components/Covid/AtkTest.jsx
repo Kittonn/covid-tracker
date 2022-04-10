@@ -1,5 +1,5 @@
 import React from "react";
-import AtkTestChart from "./Chart/AtkTestChart";
+import AtkTestChart from "../Chart/AtkTestChart";
 import AtkDashBoard from "./AtkDashBoard";
 const AtkTest = () => {
   return (

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { province } from "../data/province";
-import { vaccinegraphtype } from "../data/vaccinegraphtype";
-import { provinceVaccineDoseActions } from "../store/provinceVaccineDoseSlice";
-import { provinceVaccineTypeActions } from "../store/ProvinceVaccineTypeSlice";
-import VaccineProvinceDoseChart from "./Chart/VaccineProvinceDoseChart";
-import VaccineProvinceTypeChart from "./Chart/VaccineProvinceTypeChart";
+import { province } from "../../data/province";
+import { vaccinegraphtype } from "../../data/vaccinegraphtype";
+import { provinceVaccineDoseActions } from "../../store/provinceVaccineDoseSlice";
+import { provinceVaccineTypeActions } from "../../store/ProvinceVaccineTypeSlice";
+import VaccineProvinceDoseChart from "../Chart/VaccineProvinceDoseChart";
+import VaccineProvinceTypeChart from "../Chart/VaccineProvinceTypeChart";
 
 const ProvinceVaccineTypeSelect = () => {
   const [selected, setSelected] = useState(province[0].PROVINCE_NAME);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { province } from "../data/province";
-import { provinceVaccineActions } from "../store/provinceVaccineSlice";
+import { province } from "../../data/province";
+import { provinceVaccineActions } from "../../store/provinceVaccineSlice";
 
 const VaccineProvinceSelect = () => {
   const [selected, setSelected] = useState(province[0].PROVINCE_NAME);

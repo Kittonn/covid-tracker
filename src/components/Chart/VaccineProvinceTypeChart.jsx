@@ -22,7 +22,7 @@ ChartJS.register(
 );
 const VaccineProvinceTypeChart = () => {
   const list = useSelector((state) => state.provincevaccinetype.listData);
-  console.log(list["Johnson & Johnson"]);
+
   const data = {
     labels: [
       "AstraZeneca",

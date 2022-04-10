@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { type } from "../data/type";
-import { alldayActions } from "../store/alldayCaseSlice";
-import AllCaseChart from "./Chart/AllCaseChart";
+import { type } from "../../data/type";
+import { alldayActions } from "../../store/alldayCaseSlice";
+import AllCaseChart from "../Chart/AllCaseChart";
 
 const AllCaseSelect = () => {
   const [selected, setSelected] = useState(type[0].value);

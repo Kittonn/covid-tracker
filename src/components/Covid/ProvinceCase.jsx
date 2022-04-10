@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { getProvinceCase } from "../store/provinceCaseSlice";
+import { getProvinceCase } from "../../store/provinceCaseSlice";
 import { useDispatch } from "react-redux";
 import ProvinceSelect from "./ProvinceSelect";
-import ProvinceCaseChart from "./Chart/ProvinceCaseChart";
+import ProvinceCaseChart from "../Chart/ProvinceCaseChart";
 const ProvinceCase = () => {
   const dispatch = useDispatch();
   useEffect(() => {
