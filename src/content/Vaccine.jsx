@@ -7,6 +7,9 @@ import DayVaccine from "../components/DayVaccine";
 import { getDayVaccine } from "../store/dayVaccine";
 import VaccineSelect from "../components/VaccineSelect";
 import { getDayVaccineType } from "../store/dayVaccineType";
+import { getProvinceVaccineDose } from "../store/provinceVaccineDoseSlice";
+import ProvinceVaccineTypeSelect from "../components/ProvinceVaccineTypeSelect";
+import { getProvinceVaccineType } from "../store/ProvinceVaccineTypeSlice";
 
 const Vaccine = () => {
   const dispatch = useDispatch();
@@ -14,18 +17,19 @@ const Vaccine = () => {
     dispatch(getProvinceVaccine());
     dispatch(getDayVaccine());
     dispatch(getDayVaccineType());
+    dispatch(getProvinceVaccineDose());
+    dispatch(getProvinceVaccineType());
   }, [dispatch]);
 
   return (
     <div>
       <DayVaccine />
       <VaccineSelect />
-      {/* <div className="bg-[#e5e5e5] font-[Kanit] py-8">
-        <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
-          <VaccineProvinceSelect />
-          <VaccineProvinceChart />
-        </div>
-      </div> */}
+      <ProvinceVaccineTypeSelect />
+      <div className="w-[90%] lg:w-[80%] xl:w-[60%] mx-auto font-[Kanit] py-8">
+        <VaccineProvinceSelect />
+        <VaccineProvinceChart />
+      </div>
     </div>
   );
 };

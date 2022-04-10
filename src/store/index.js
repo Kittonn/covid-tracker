@@ -6,6 +6,8 @@ import dayVaccineSlice from "./dayVaccine";
 import dayVaccineTypeSlice from "./dayVaccineType";
 import provinceCaseSlice from "./provinceCaseSlice";
 import provinceVaccineSlice from "./provinceVaccineSlice";
+import provinceVaccineDoseSlice from "./provinceVaccineDoseSlice";
+import provinceVaccineTypeSlice from "./ProvinceVaccineTypeSlice";
 
 const store = configureStore({
   reducer: {
@@ -16,6 +18,8 @@ const store = configureStore({
     provincevaccine: provinceVaccineSlice.reducer,
     dayvaccine: dayVaccineSlice.reducer,
     dayvaccinetype: dayVaccineTypeSlice.reducer,
+    provincevaccinedose: provinceVaccineDoseSlice.reducer,
+    provincevaccinetype: provinceVaccineTypeSlice.reducer,
   },
 });
 

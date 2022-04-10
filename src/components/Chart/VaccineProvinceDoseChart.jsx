@@ -1,47 +1,43 @@
 import React from "react";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
 );
 
-const VaccineProvinceChart = () => {
-  const { dataProvince, update_date } = useSelector(
-    (state) => state.provincevaccine
-  );
-  const {
-    province,
-    delivered_sinovac,
-    delivered_astrazeneca,
-    delivered_pfizer,
-    delivered_total,
-  } = dataProvince;
+const VaccineProvinceDoseChart = () => {
+  const { province, total_1st_dose, total_2nd_dose, total_3rd_dose } =
+    useSelector((state) => state.provincevaccinedose.dataList);
+
   const data = {
-    labels: ["Sinovac", "Astrazeneca", "Pfizer", "Total"],
+    labels: ["เข็มที 1", "เข็มที 2", "เข็มที 3", "ทัั้งหมด"],
     datasets: [
       {
-        label: `ปริมาณ`,
+        label: "ปริมาณ",
         data: [
-          delivered_sinovac,
-          delivered_astrazeneca,
-          delivered_pfizer,
-          delivered_total,
+          total_1st_dose,
+          total_2nd_dose,
+          total_3rd_dose,
+          total_1st_dose + total_2nd_dose + total_3rd_dose,
         ],
+
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(255, 205, 86, 0.2)",
@@ -64,20 +60,20 @@ const VaccineProvinceChart = () => {
     plugins: {
       title: {
         display: true,
-        text: `การจัดส่งวัคซีนในจังหวัด${province}`,
+        text: ["กราฟแสดงจำนวนการฉีดวัคซีน", `จังหวัด${province} ในรอบ 14 วัน`],
         font: {
           size: 16,
           family: "Kanit",
         },
       },
       legend: {
-        display: false,
         labels: {
           font: {
             size: 14,
             family: "Kanit",
           },
         },
+        display: false,
       },
     },
     scales: {
@@ -98,4 +94,4 @@ const VaccineProvinceChart = () => {
   );
 };
 
-export default VaccineProvinceChart;
+export default VaccineProvinceDoseChart;
