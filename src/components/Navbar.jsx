@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillApi } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 const Navbar = () => {
   return (
     <div className="bg-[#14213d] text-white">
@@ -12,11 +12,11 @@ const Navbar = () => {
         </div>
         <div className="text-base md:text-xl">
           <a
-            href="https://github.com/porames/the-researcher-covid-data"
+            href="https://github.com/Kittonn"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <AiFillApi className="text-3xl" />
+            <AiFillGithub className="text-3xl" />
           </a>
         </div>
       </div>
