@@ -20,7 +20,7 @@ const AtkDashBoard = () => {
   }, 0);
 
   return (
-    <div className="font-[Kanit] whitespace-nowrap bg-[#e5e5e5] rounded-xl p-5 md:mr-6 mb-4">
+    <div className="font-[Kanit] whitespace-nowrap bg-[#e5e5e5] rounded-xl p-5 md:mr-6 mb-4 shadow-md">
       <h1 className="text-[#03045e] text-lg font-semibold ">
         ข้อมูลการตรวจหาเชื้อ Covid-19 ด้วยวิธี RT-PCR
       </h1>
