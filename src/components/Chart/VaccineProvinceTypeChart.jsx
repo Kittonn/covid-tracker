@@ -100,6 +100,17 @@ const VaccineProvinceTypeChart = () => {
         },
       },
       y: {
+        ticks: {
+          callback: (value, index, array) => {
+            return value === 0
+              ? 0
+              : value < 1000000 && value >= 1000
+              ? value / 1000 + "K"
+              : value >= 1000000
+              ? value / 1000000 + "M"
+              : value;
+          },
+        },
         beginAtZero: true,
       },
     },

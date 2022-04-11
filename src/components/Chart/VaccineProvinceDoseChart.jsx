@@ -27,7 +27,7 @@ const VaccineProvinceDoseChart = () => {
     useSelector((state) => state.provincevaccinedose.dataList);
 
   const data = {
-    labels: ["เข็มที 1", "เข็มที 2", "เข็มที 3", "ทัั้งหมด"],
+    labels: ["เข็มที 1", "เข็มที 2", "เข็มที 3", "ทั้งหมด"],
     datasets: [
       {
         label: "ปริมาณ",
@@ -83,6 +83,17 @@ const VaccineProvinceDoseChart = () => {
         },
       },
       y: {
+        ticks: {
+          callback: (value, index, array) => {
+            return value === 0
+              ? 0
+              : value < 1000000 && value >= 1000
+              ? value / 1000 + "K"
+              : value >= 1000000
+              ? value / 1000000 + "M"
+              : value;
+          },
+        },
         beginAtZero: true,
       },
     },

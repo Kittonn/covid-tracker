@@ -42,6 +42,7 @@ const AllCaseChart = ({ selected }) => {
     labels: allDay.map((item) => item.txn_date),
     datasets: [
       {
+        label: "จำนวน",
         data: allDay.map((item) => item.case),
         backgroundColor: ["rgba(255, 205, 86, 0.2)"],
         borderColor: ["rgb(255, 205, 86)"],
@@ -72,6 +73,17 @@ const AllCaseChart = ({ selected }) => {
         },
       },
       y: {
+        ticks: {
+          callback: (value, index, array) => {
+            return value === 0
+              ? 0
+              : value < 1000000 && value >= 1000
+              ? value / 1000 + "K"
+              : value >= 1000000
+              ? value / 1000000 + "M"
+              : value;
+          },
+        },
         beginAtZero: true,
       },
     },
