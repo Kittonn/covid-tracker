@@ -3,9 +3,12 @@ import axios from "axios";
 
 const url = "https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all";
 
-export const getAllDay = createAsyncThunk("/Cases/getAllDay", async () => {
-  return axios.get(url).then((res) => res.data);
-});
+export const getAllDay = createAsyncThunk(
+  "/Cases/timeline-cases-all",
+  async () => {
+    return axios.get(url).then((res) => res.data);
+  }
+);
 
 const allDaySlice = createSlice({
   name: "allday",

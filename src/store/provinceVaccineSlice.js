@@ -4,9 +4,12 @@ import axios from "axios";
 const url =
   "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/vaccination/vaccine-delivery.json";
 
-export const getProvinceVaccine = createAsyncThunk("/vaccination", async () => {
-  return axios.get(url).then((res) => res.data);
-});
+export const getProvinceVaccine = createAsyncThunk(
+  "/vaccination/vaccine-delivery.json",
+  async () => {
+    return axios.get(url).then((res) => res.data);
+  }
+);
 
 const provinceVaccineSlice = createSlice({
   name: "provincevaccine",

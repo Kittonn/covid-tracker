@@ -5,7 +5,7 @@ const url =
   "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/vaccination/national-vaccination-timeseries.json";
 
 export const getDayVaccine = createAsyncThunk(
-  "/vaccination/getDayVaccine",
+  "/vaccination/national-vaccination-timeseries.json",
   async () => {
     return axios.get(url).then((res) => res.data);
   }

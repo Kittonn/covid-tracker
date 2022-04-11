@@ -5,7 +5,7 @@ const url =
   "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/cases/province-cases-data-14days.json";
 
 export const getProvinceCase = createAsyncThunk(
-  "/Cases/getProvinceCase",
+  "/cases/province-cases-data-14days.json",
   async () => {
     return axios.get(url).then((res) => res.data);
   }
