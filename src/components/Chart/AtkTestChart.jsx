@@ -94,7 +94,7 @@ const AtkTestChart = () => {
     },
   };
   return (
-    <div className="font-[Poppins] h-[300px] md:h-[400px] lg:h-[480px] flex-1">
+    <div className="font-[Poppins] flex-1 h-[300px] md:h-[400px] lg:h-[480px] w-[90%] lg:w-[80%] xl:w-[60%] mx-auto">
       <Bar data={data} height={150} options={options} />
     </div>
   );
