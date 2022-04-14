@@ -6,12 +6,18 @@ import { useDispatch } from "react-redux";
 import { getTodayCaseAll } from "../Store/todayCaseAllSlice";
 import { getTimelineCase } from "../Store/timelineCaseSlice";
 import TimelineCaseSelect from "../Components/Select/TimelineCaseSelect";
+import { getProvinceCase } from "../Store/provinceCaseSlice";
+import { getTesting } from "../Store/testingSlice";
+import { getNationalVaccine } from "../Store/nationalVaccineSlice";
 
 const Page: React.FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTodayCaseAll());
     dispatch(getTimelineCase());
+    dispatch(getProvinceCase());
+    dispatch(getTesting());
+    dispatch(getNationalVaccine());
   }, [dispatch]);
 
   return (
