@@ -12,3 +12,6 @@ export const selectProvinceCase = (state: rootState) =>
   state.province_case.data[0];
 
 export const selectTesting = (state: rootState) => state.testing.list;
+
+export const selectNationalVaccine = (state: rootState) =>
+  state.nationalvaccine.list;
