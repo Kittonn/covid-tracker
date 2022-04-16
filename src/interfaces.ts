@@ -92,7 +92,7 @@ export interface NationalVaccineManufacturerI {
   status: null | "loading" | "success" | "failed";
 }
 
-export interface ProvinceVaccineListI {
+interface ProvinceVaccineObj {
   province: string;
   over_60_1st_dose: number;
   total_1st_dose: number;
@@ -100,12 +100,17 @@ export interface ProvinceVaccineListI {
   total_3rd_dose: number;
 }
 
-export interface ProvinceVaccineI {
-  list: ProvinceVaccineListI[];
-  status: null | "loading" | "success" | "failed";
+export interface ProvinceVaccineListI {
+  [key: string]: string | any;
 }
 
-export interface ProvinceVaccineManufacturerListI {
+export interface ProvinceVaccineI {
+  list: ProvinceVaccineListI;
+  status: null | "loading" | "success" | "failed";
+  data: ProvinceVaccineObj[];
+}
+
+export interface ProvincceVaccineManufacturerObj {
   total_doses: number;
   province: string;
   AstraZeneca: number;
@@ -116,7 +121,12 @@ export interface ProvinceVaccineManufacturerListI {
   "Johnson & Johnson": number;
 }
 
+export interface ProvinceVaccineManufacturerListI {
+  [key: string]: string | any;
+}
+
 export interface ProvinceVaccineManufacturerI {
-  list: ProvinceVaccineManufacturerListI[];
+  list: ProvinceVaccineManufacturerListI;
   status: null | "loading" | "success" | "failed";
+  data: ProvincceVaccineManufacturerObj[];
 }

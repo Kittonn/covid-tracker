@@ -16,6 +16,7 @@ import { getNationalVaccineManufacturer } from "../Store/nationalVaccineManufact
 import { getProvinceVaccine } from "../Store/provinceVaccine";
 import { getProvinceVaccineManufacturer } from "../Store/provinceVaccineManufacturer";
 import NationalVaccineSelect from "../Components/Select/NationalVaccineSelect";
+import ProvinceVaccineSelect from "../Components/Select/ProvinceVaccineSelect";
 
 const Page: React.FC = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const Page: React.FC = () => {
       <Testing />
       <NationalVaccineDashboard />
       <NationalVaccineSelect />
+      <ProvinceVaccineSelect />
     </Layout>
   );
 };

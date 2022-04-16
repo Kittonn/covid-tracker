@@ -11,23 +11,35 @@ export const getProvinceVaccineManufacturer = createAsyncThunk(
 );
 
 const initialState: ProvinceVaccineManufacturerI = {
-  list: [],
+  list: {},
   status: null,
+  data: [],
 };
 
 const provinceVaccineManufacturerSlice = createSlice({
   name: "province_vaccine_manufacturer",
   initialState,
-  reducers: {},
+  reducers: {
+    change_province_manu(state, action) {
+      state.data = state.list.data.filter(
+        (item: { [key: string]: string | number }) =>
+          item.province === action.payload
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProvinceVaccineManufacturer.pending, (state, action) => {
       state.status = "loading";
     });
     builder.addCase(
       getProvinceVaccineManufacturer.fulfilled,
-      (state, action: PayloadAction<ProvinceVaccineManufacturerListI[]>) => {
+      (state, action: PayloadAction<ProvinceVaccineManufacturerListI>) => {
         state.list = action.payload;
         state.status = "success";
+        state.data = state.list.data.filter(
+          (item: { [key: string]: string | number }) =>
+            item.province === "กรุงเทพมหานคร"
+        );
       }
     );
     builder.addCase(
@@ -38,5 +50,8 @@ const provinceVaccineManufacturerSlice = createSlice({
     );
   },
 });
+
+export const { change_province_manu } =
+  provinceVaccineManufacturerSlice.actions;
 
 export default provinceVaccineManufacturerSlice;

@@ -13,8 +13,7 @@ import {
   BarElement,
 } from "chart.js";
 import { useSelector } from "react-redux";
-import { selectTesting } from "../../Store/selector";
-
+import { selectProvinceVaccine } from "../../Store/selector";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -26,24 +25,35 @@ ChartJS.register(
   BarElement
 );
 
-const TestingChart: React.FC = () => {
-  const datas = useSelector(selectTesting);
+const ProvinceVaccineChart: React.FC = () => {
+  const datas = useSelector(selectProvinceVaccine);
 
   const data = {
-    labels: datas.map((item) => item.date),
+    labels: ["เข็มที 1", "เข็มที 2", "เข็มที 3", "ทั้งหมด"],
     datasets: [
       {
-        label: "จำนวนการตรวจเชื้อ",
-        data: datas.map((item) => item.tests),
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgb(75, 192, 192)",
-        borderWidth: 1,
-      },
-      {
-        label: "Positive",
-        data: datas.map((item) => item.positive),
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgb(255, 99, 132)",
+        label: "ปริมาณ",
+        data: [
+          datas[0]?.total_1st_dose,
+          datas[0]?.total_2nd_dose,
+          datas[0]?.total_3rd_dose,
+          datas[0]?.total_1st_dose +
+            datas[0]?.total_2nd_dose +
+            datas[0]?.total_3rd_dose,
+        ],
+
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(255, 205, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+        ],
+        borderColor: [
+          "rgb(255, 99, 132)",
+          "rgb(255, 205, 86)",
+          "rgb(75, 192, 192)",
+          "rgb(153, 102, 255)",
+        ],
         borderWidth: 1,
       },
     ],
@@ -54,7 +64,10 @@ const TestingChart: React.FC = () => {
     plugins: {
       title: {
         display: true,
-        text: "กราฟแสดงจำนวนการตรวจหาเชื้อ Covid-19",
+        text: [
+          `กราฟแสดงจำนวนการฉีดวัคซีน จังหวัด${datas[0]?.province} `,
+          `แยกตามเข็มที่ฉีด ในรอบ 14 วัน`,
+        ],
         font: {
           size: 16,
           family: "Kanit",
@@ -93,4 +106,4 @@ const TestingChart: React.FC = () => {
   );
 };
 
-export default TestingChart;
+export default ProvinceVaccineChart;
