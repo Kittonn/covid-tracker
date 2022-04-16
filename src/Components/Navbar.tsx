@@ -4,7 +4,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="bg-[#14213d] text-white">
+    <div className="bg-[#14213d] text-white fixed w-full top-0 left-0">
       <Container>
         <div className="flex justify-between items-center font-[Poppins] py-4">
           <div>

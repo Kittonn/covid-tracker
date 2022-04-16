@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const TodayCaseDashboard: React.FC = () => {
   const data = useSelector(selectTodayCaseAll);
   return (
-    <div className="bg-[#e5e5e5] font-[Kanit]">
+    <div className="bg-[#e5e5e5] font-[Kanit] pt-[50px]">
       <Container>
         <div className="text-center pt-8">
           <h1 className="text-[#03045e] font-bold text-2xl md:text-3xl  lg:text-5xl">

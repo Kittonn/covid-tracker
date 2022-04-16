@@ -10,3 +10,5 @@ export const selectTimelineCase = (state: rootState) =>
 
 export const selectProvinceCase = (state: rootState) =>
   state.province_case.data[0];
+
+export const selectTesting = (state: rootState) => state.testing.list;

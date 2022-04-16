@@ -10,6 +10,7 @@ import { getProvinceCase } from "../Store/provinceCaseSlice";
 import { getTesting } from "../Store/testingSlice";
 import { getNationalVaccine } from "../Store/nationalVaccineSlice";
 import ProvinceCase from "../Components/Covid/ProvinceCase";
+import Testing from "../Components/Covid/Testing";
 
 const Page: React.FC = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const Page: React.FC = () => {
       <TodayCaseDashboard />
       <TimelineCaseSelect />
       <ProvinceCase />
+      <Testing />
     </Layout>
   );
 };
