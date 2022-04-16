@@ -72,3 +72,51 @@ export interface NationalVaccineI {
   list: NationalVaccineListI[];
   status: null | "loading" | "success" | "failed";
 }
+
+export interface NationalVaccineManufacturerListI {
+  date: string;
+  AstraZeneca: number;
+  AstraZeneca_rate: number;
+  "Johnson & Johnson": number;
+  JnJ_rate: number;
+  Sinopharm: number;
+  Sinopharm_rate: number;
+  Sinovac: number;
+  Sinovac_rate: number;
+  Pfizer: number;
+  Pfizer_rate: number;
+}
+
+export interface NationalVaccineManufacturerI {
+  list: NationalVaccineManufacturerListI[];
+  status: null | "loading" | "success" | "failed";
+}
+
+export interface ProvinceVaccineListI {
+  province: string;
+  over_60_1st_dose: number;
+  total_1st_dose: number;
+  total_2nd_dose: number;
+  total_3rd_dose: number;
+}
+
+export interface ProvinceVaccineI {
+  list: ProvinceVaccineListI[];
+  status: null | "loading" | "success" | "failed";
+}
+
+export interface ProvinceVaccineManufacturerListI {
+  total_doses: number;
+  province: string;
+  AstraZeneca: number;
+  Pfizer: number;
+  Sinovac: number;
+  Sinopharm: number;
+  Moderna: "number";
+  "Johnson & Johnson": number;
+}
+
+export interface ProvinceVaccineManufacturerI {
+  list: ProvinceVaccineManufacturerListI[];
+  status: null | "loading" | "success" | "failed";
+}

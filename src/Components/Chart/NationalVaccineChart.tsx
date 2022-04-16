@@ -1,6 +1,8 @@
 import React from "react";
 import ChartLayout from "./ChartLayout";
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
+import { useSelector } from "react-redux";
+import { selectNationalVaccine } from "../../Store/selector";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,11 +12,7 @@ import {
   Title,
   Tooltip,
   Legend,
-  BarElement,
 } from "chart.js";
-import { useSelector } from "react-redux";
-import { selectTesting } from "../../Store/selector";
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -22,28 +20,33 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend,
-  BarElement
+  Legend
 );
-
-const TestingChart: React.FC = () => {
-  const datas = useSelector(selectTesting);
+const NationalVaccineChart: React.FC = () => {
+  const datas = useSelector(selectNationalVaccine);
 
   const data = {
     labels: datas.map((item) => item.date),
     datasets: [
       {
-        label: "จำนวนการตรวจเชื้อ",
-        data: datas.map((item) => item.tests),
+        label: "เข็มที่ 1",
+        data: datas.map((item) => item.first_dose),
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgb(75, 192, 192)",
         borderWidth: 1,
       },
       {
-        label: "Positive",
-        data: datas.map((item) => item.positive),
+        label: "เข็มที่ 2",
+        data: datas.map((item) => item.second_dose),
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderColor: "rgb(255, 99, 132)",
+        borderWidth: 1,
+      },
+      {
+        label: "เข็มที่ 3",
+        data: datas.map((item) => item.third_dose),
+        backgroundColor: "rgba(255, 205, 86, 0.2)",
+        borderColor: "rgb(255, 205, 86)",
         borderWidth: 1,
       },
     ],
@@ -54,7 +57,10 @@ const TestingChart: React.FC = () => {
     plugins: {
       title: {
         display: true,
-        text: "กราฟแสดงจำนวนการตรวจหาเชื้อ Covid-19",
+        text: [
+          "กราฟแสดงจำนวนการฉีดวัคซีนทั้งประเทศ",
+          "แยกตามเข็มที่ฉีด ในรอบ 14 วัน",
+        ],
         font: {
           size: 16,
           family: "Kanit",
@@ -86,12 +92,12 @@ const TestingChart: React.FC = () => {
       },
     },
   };
+
   return (
     <ChartLayout>
-      {" "}
-      <Bar data={data} options={options} />
+      <Line data={data} options={options} />
     </ChartLayout>
   );
 };
 
-export default TestingChart;
+export default NationalVaccineChart;

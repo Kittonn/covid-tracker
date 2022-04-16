@@ -12,3 +12,12 @@ export const url_testing =
 
 export const url_national_vaccine =
   "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/vaccination/national-vaccination-timeseries.json";
+
+export const url_national_vaccine_manufacturer =
+  "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/vaccination/vaccine-manufacturer-timeseries.json";
+
+export const url_province_vaccine =
+  "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/vaccination/provincial-vaccination.json";
+
+export const url_province_vaccine_manufacturer =
+  "https://raw.githubusercontent.com/wiki/porames/the-researcher-covid-data/vaccination/provincial-vaccination-by-manufacturer.json";

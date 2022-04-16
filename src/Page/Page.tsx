@@ -12,6 +12,10 @@ import { getNationalVaccine } from "../Store/nationalVaccineSlice";
 import ProvinceCase from "../Components/Covid/ProvinceCase";
 import Testing from "../Components/Covid/Testing";
 import NationalVaccineDashboard from "../Components/Vaccine/NationalVaccineDashboard";
+import { getNationalVaccineManufacturer } from "../Store/nationalVaccineManufacturer";
+import { getProvinceVaccine } from "../Store/provinceVaccine";
+import { getProvinceVaccineManufacturer } from "../Store/provinceVaccineManufacturer";
+import NationalVaccineSelect from "../Components/Select/NationalVaccineSelect";
 
 const Page: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,6 +25,9 @@ const Page: React.FC = () => {
     dispatch(getProvinceCase());
     dispatch(getTesting());
     dispatch(getNationalVaccine());
+    dispatch(getNationalVaccineManufacturer());
+    dispatch(getProvinceVaccine());
+    dispatch(getProvinceVaccineManufacturer());
   }, [dispatch]);
 
   return (
@@ -31,6 +38,7 @@ const Page: React.FC = () => {
       <ProvinceCase />
       <Testing />
       <NationalVaccineDashboard />
+      <NationalVaccineSelect />
     </Layout>
   );
 };

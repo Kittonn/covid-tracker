@@ -15,3 +15,6 @@ export const selectTesting = (state: rootState) => state.testing.list;
 
 export const selectNationalVaccine = (state: rootState) =>
   state.nationalvaccine.list;
+
+export const selectNationalVaccineManufacturer = (state: rootState) =>
+  state.national_vaccine_manufacturer.list;
