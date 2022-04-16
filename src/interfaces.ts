@@ -100,12 +100,12 @@ interface ProvinceVaccineObj {
   total_3rd_dose: number;
 }
 
-export interface ProvinceVaccineListI {
-  [key: string]: string | any;
-}
+// export interface ProvinceVaccineListI {
+//   [key: string]: string | any;
+// }
 
 export interface ProvinceVaccineI {
-  list: ProvinceVaccineListI;
+  list: { [key: string]: string | any };
   status: null | "loading" | "success" | "failed";
   data: ProvinceVaccineObj[];
 }
@@ -121,12 +121,12 @@ export interface ProvincceVaccineManufacturerObj {
   "Johnson & Johnson": number;
 }
 
-export interface ProvinceVaccineManufacturerListI {
-  [key: string]: string | any;
-}
+// export interface ProvinceVaccineManufacturerListI {
+//   [key: string]: string | any;
+// }
 
 export interface ProvinceVaccineManufacturerI {
-  list: ProvinceVaccineManufacturerListI;
+  list: { [key: string]: string | any };
   status: null | "loading" | "success" | "failed";
   data: ProvincceVaccineManufacturerObj[];
 }
