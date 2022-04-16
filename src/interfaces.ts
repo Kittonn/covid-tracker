@@ -41,6 +41,10 @@ export interface ProvinceCaseListI {
 export interface ProvinceCaseI {
   list: ProvinceCaseListI[];
   status: null | "loading" | "success" | "failed";
+  data: {
+    province: string;
+    case: { [key: string]: number };
+  }[];
 }
 
 export interface TestingListI {

@@ -1,5 +1,9 @@
 import React from "react";
+import ChartLayout from "./ChartLayout";
 import { Line } from "react-chartjs-2";
+import { useSelector } from "react-redux";
+import { selectProvinceCase } from "../../Store/selector";
+import { formatDate } from "../../change_date";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,9 +14,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { useSelector } from "react-redux";
-import { selectTimelineCase } from "../../Store/selector";
-import ChartLayout from "./ChartLayout";
 
 ChartJS.register(
   CategoryScale,
@@ -24,20 +25,24 @@ ChartJS.register(
   Legend
 );
 
-const TimelineCaseChart = ({ selected }: { selected: string }) => {
+const ProvinceCaseChart = ({
+  selected,
+  type,
+}: {
+  selected: string;
+  type: string;
+}) => {
   const text =
-    selected === "new_case"
-      ? "ผู้ติดเชื้อรายใหม่"
-      : selected === "new_death"
-      ? "ผู้เสียชีวิตรายใหม่"
-      : "ผู้ป่วยรักษาหาย";
-  const datas = useSelector(selectTimelineCase);
+    type === "new_case" ? "ผู้ติดเชื้อรายใหม่" : "ผู้เสียชีวิตรายใหม่";
+  const datas = useSelector(selectProvinceCase);
   const data = {
-    labels: datas.map((item) => item.date),
+    labels: Object.keys(datas?.case || {}).map((item) =>
+      formatDate(new Date(item))
+    ),
     datasets: [
       {
         label: "จำนวน",
-        data: datas.map((item) => item.cases),
+        data: Object.values(datas?.case || {}),
         backgroundColor: "rgba(255, 205, 86, 0.2)",
         borderColor: "rgb(255, 205, 86)",
         borderWidth: 2,
@@ -50,7 +55,7 @@ const TimelineCaseChart = ({ selected }: { selected: string }) => {
     plugins: {
       title: {
         display: true,
-        text: `กราฟแสดงจำนวน${text} ในรอบ 14 วัน`,
+        text: [`กราฟแสดงจำนวน${text}`, `จังหวัด${selected} ในรอบ 14 วัน`],
         font: {
           size: 16,
           family: "Kanit",
@@ -89,4 +94,4 @@ const TimelineCaseChart = ({ selected }: { selected: string }) => {
   );
 };
 
-export default TimelineCaseChart;
+export default ProvinceCaseChart;

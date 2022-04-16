@@ -7,3 +7,6 @@ export const selectTodayCaseAll = (state: rootState) =>
 
 export const selectTimelineCase = (state: rootState) =>
   state.timeline_case.data;
+
+export const selectProvinceCase = (state: rootState) =>
+  state.province_case.data[0];

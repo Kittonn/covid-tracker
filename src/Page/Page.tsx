@@ -9,6 +9,7 @@ import TimelineCaseSelect from "../Components/Select/TimelineCaseSelect";
 import { getProvinceCase } from "../Store/provinceCaseSlice";
 import { getTesting } from "../Store/testingSlice";
 import { getNationalVaccine } from "../Store/nationalVaccineSlice";
+import ProvinceCase from "../Components/Covid/ProvinceCase";
 
 const Page: React.FC = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const Page: React.FC = () => {
       <Navbar />
       <TodayCaseDashboard />
       <TimelineCaseSelect />
+      <ProvinceCase />
     </Layout>
   );
 };
