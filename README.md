@@ -1,6 +1,6 @@
 # Covid Tracker
 
-> Link : <https://covid-tracker-dashboard.vercel.app>
+> Link : https://covid-tracker-thailand.vercel.app/
 
 ### ที่มาของข้อมูล 
 
