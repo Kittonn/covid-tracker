@@ -58,14 +58,14 @@ const TodayCaseDashboard: React.FC = () => {
               ผู้เสียชีวิตสะสม
             </p>
             <h1 className="text-3xl font-bold text-[#03045e] tracking-wider mb-2">
-              {data?.new_death.toLocaleString() || 0}
+              {data?.total_death.toLocaleString() || 0}
             </h1>
             <hr />
             <p className="text-base text-[#adb5bd] mt-1">เพิ่ม</p>
             <div className="flex items-center">
               <FcPlus className="text-2xl mr-2" />
               <div className="tracking-wider font-bold text-lg">
-                {data?.total_death.toLocaleString() || 0}
+                {data?.new_death.toLocaleString() || 0}
               </div>
             </div>
           </div>
